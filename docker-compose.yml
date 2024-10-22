@@ -1,0 +1,18 @@
+services:
+  managers-api-sql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - "ACCEPT_EULA=Y"
+      - MSSQL_SA_PASSWORD=SenhaExemplo123
+    volumes:
+      - "volume-api-sqlserver:/var/opt/mssql"
+    ports:
+      - 1433:1433
+    
+  # String de conexao usando Docker:
+  # Server=localhost,1433;Database=db_integradorITA20;User Id=sa;Password=SenhaExemplo123;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True
+
+
+
+volumes:
+  volume-api-sqlserver:
